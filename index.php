@@ -18,7 +18,8 @@
 
       <div id="userInfo">
         ishibustim
-        <i class="fa fa-sign-out"></i>
+        <i id="openSettings" class="fa fa-cog"></i>
+        <i id="logOut" class="fa fa-sign-out"></i>
       </div>
 
       <div id="newApiWindow">
