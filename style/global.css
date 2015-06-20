@@ -1,0 +1,12 @@
+body {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    background-image: url('images/war_fleet.jpg');
+}
+
+#main {
+    margin-left: 60px;
+    width: auto;
+    position: relative;
+}
