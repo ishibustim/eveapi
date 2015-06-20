@@ -1,0 +1,17 @@
+#userInfo {
+    height: 30px;
+    line-height: 30px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0 10px 0 10px;
+    cursor: default;
+    border-radius: 0px 0px 0px 10px;
+}
+
+#userInfo i {
+    cursor: pointer;
+    margin: 0 0 0 20px;
+}

@@ -15,6 +15,12 @@
     ?>
 
     <div id="main">
+
+      <div id="userInfo">
+        ishibustim
+        <i class="fa fa-sign-out"></i>
+      </div>
+
       <div id="newApiWindow">
         <div><div class="label">Key ID:</div><input type="textbox" /></div>
         <div><div class="label">Verification Code:</div><input type="textbox" /></div>
