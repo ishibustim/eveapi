@@ -13,10 +13,10 @@ function serverTime_init() {
             if (rawTimeString != null) {
                 // Initialize the server time and set up an event to keep it updated
                 timeDiv = document.getElementById("serverTime");
-                timeDiv.innerHTML = (serverDateTime.getHours() < 10) ? '0' : '' +
+                timeDiv.innerHTML = ((serverDateTime.getHours() < 10) ? '0' : '') +
                     serverDateTime.getHours() +
                     ":" +
-                    (serverDateTime.getMinutes() < 10) ? '0' : '' +
+                    ((serverDateTime.getMinutes() < 10) ? '0' : '') +
                     serverDateTime.getMinutes();
                 setInterval(function () {
                     timeDiv.innerHTML = serverDateTime.getHours() + ":" + serverDateTime.getMinutes();
