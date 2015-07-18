@@ -2,13 +2,12 @@
 
 include '../sql_login.php';
 
-$conn;
-$db_selected;
-
 if(isset($_POST['action']))
 {
+    $conn;
+    $db_selected;
 
-    connectToDatabase($sql_hostname, $sql_username, $sql_password, $sql_database_name);
+    connectToDatabase($sql_hostname, $sql_username, $sql_password, $sql_database_name, $conn, $db_selected);
 
     switch($_POST['action'])
     {
@@ -98,7 +97,7 @@ if(isset($_POST['action']))
     }//end switch
 }//end if
 
-function connectToDatabase($hostname, $username, $password, $database_name)
+function connectToDatabase($hostname, $username, $password, $database_name, &$conn, &$db_selected)
 {
     $conn = mysql_connect($sql_hostname, $sql_username, $sql_password);
 
