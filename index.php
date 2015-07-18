@@ -22,6 +22,7 @@
             <div class="hidden"><div class="label">Verify Password:</div><input name="verifyPassword" type="password" /></div>
             <div class="buttons">
                 <input type="submit" value="Log In" id="signIn_logIn" />
+                <input class="hidden" type="submit" value="Cancel" id="signIn_register_cancel" />
                 <input type="submit" value="Register" id="signIn_register" />
             </div>
         </div>

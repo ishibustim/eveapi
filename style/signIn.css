@@ -35,11 +35,6 @@
     margin: 10px;
     cursor: pointer;
     border: none;
-    transition: width 0.5s;
-}
-
-#signIn .buttons input.expand {
-    width: 50%;
 }
 
 #signIn .buttons input:hover {
