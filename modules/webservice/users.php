@@ -36,7 +36,10 @@ if(isset($_POST['action']))
                     $password = hash('sha512', mysql_real_escape_string($_POST['password']) . $salt) . $salt;
                     $sql = "INSERT INTO Users (UserID, Password) VALUES ('" . $userID . "', '" . $password . "')";
 
-                    mysql_query($sql);
+                    if(!mysql_query($sql))
+                    {
+                        die("Error: " . mysql_error());
+                    }//end if
 
                     echo '<xml><result>success</result></xml>';
                 }//end if
