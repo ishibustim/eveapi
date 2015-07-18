@@ -21,10 +21,10 @@ function showWindow(targetID) {
 }//end showWindow
 
 function closeWindow() {
-    var windows = $(mainID + ' *').not('.hidden');
-
-    $.each(windows, function () {
-        $(this).addClass('hidden');
+    $.each(windowIDs, function () {
+        if (!$(this).hasClass('hidden')) {
+            $(this).addClass('hidden');
+        }//end if
     });//end each
 
     $(mainID).addClass('hidden');
