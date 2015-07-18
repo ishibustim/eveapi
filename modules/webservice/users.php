@@ -43,6 +43,7 @@ if(isset($_POST['action']))
                     if(!mysql_query($sql))
                     {
                         die("Error: " . mysql_error());
+                        break;
                     }//end if
 
                     echo '<xml><result>success</result></xml>';
@@ -122,6 +123,7 @@ if(isset($_POST['action']))
                         if(!mysql_query($sql))
                         {
                             die("Error: " . mysql_error());
+                            break;
                         }//end if
 
                         echo '<xml><result>success</result></xml>';

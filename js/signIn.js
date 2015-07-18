@@ -6,6 +6,7 @@ function signIn_addEventListeners()
 {
     $('#signIn_register').click(beginRegister);
     $('#signIn_register_cancel').click(cancelRegister);
+    $('#signIn_logIn').click(signIn);
 }//end addEventListeners
 
 function beginRegister()
@@ -33,6 +34,7 @@ function beginRegister()
                     var result = $('result', data).text();
                     if (result == 'success') {
                         alert('Account Created');
+                        signIn();
                     }//end if
                     else if (result == 'duplicate') {
                         alert('Username already exists');
@@ -63,3 +65,36 @@ function cancelRegister()
         $('#signIn_register_cancel').addClass('hidden');
     }//end if
 }//end cancelRegister
+
+function signIn()
+{
+    var username = $('input[name="username"]').val();
+    var password = $('input[name="password"]').val();
+
+    if (password.length >= 8) {
+        $.post(usersPostURL, {
+            action: 'signIn',
+            username: username,
+            password: password
+        }, function (data, status, xhr) {
+            if (status == 'success') {
+                var result = $('result', data).text();
+                if (result == 'success') {
+                    alert('Signed In!');
+                }//end if
+                else if (result == 'fail') {
+                    alert('Username and Password do not match');
+                }//end else if
+                else {
+                    alert('Unknown Error');
+                }//end else
+            }//end if
+            else {
+                alert('Unable to sign in');
+            }//end else
+        });//end $.post
+    }//end if
+    else {
+        alert('Password must be longer than 8 characters');
+    }//end else
+}//end signIn
