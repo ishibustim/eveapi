@@ -1,8 +1,4 @@
 <?php
-
-// Set SQL login
-include 'sql_login.php';
-
 $indent = "    ";
 $linkCSSBase = "<link rel='stylesheet' type='text/css' href='";
 $linkCSSSuffix = "' />\n";

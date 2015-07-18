@@ -1,16 +1,17 @@
 <html>
   <head>
     <?php
-       include 'modules/fileImports.php';
+        include 'module/sql_login.php';
+        include 'modules/fileImports.php';
     ?>
   </head>
   <body>
     <?php
-       // Include backend modules
-       include 'modules/apiModules/apiImports.php';
+        // Include backend modules
+        include 'modules/apiModules/apiImports.php';
 
-       // Draw navbar
-       include 'modules/uiModules/navbar.php';
+        // Draw navbar
+        include 'modules/uiModules/navbar.php';
 
     ?>
 
