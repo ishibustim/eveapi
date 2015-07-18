@@ -134,6 +134,7 @@ function changePassword() {
     if (password.length >= 8 && newPassword.length >= 8) {
         if (newPassword == verifyPassword) {
             $.post(usersPostURL, {
+                action: 'changePassword',
                 username: username,
                 password: password,
                 newPassword: newPassword,
