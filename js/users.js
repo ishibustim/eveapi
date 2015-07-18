@@ -145,6 +145,9 @@ function changePassword() {
                         // store updated password for later calls
                         global_password = newPassword;
                     }//end if
+                    else if (result == 'incorrect') {
+                        alert('Old password is incorrect');
+                    }//end else if
                     else {
                         alert('Unknown Error');
                     }//end else
