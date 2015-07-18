@@ -20,14 +20,14 @@ echo $indent . "<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/
 
 // javascript
 echo $indent . "<script src='js/eveApi.js' type='text/javascript' defer></script>\n";
-echo $indent . "<script src='js/signIn.js' type='text/javascript' defer></script>\n";
+echo $indent . "<script src='js/users.js' type='text/javascript' defer></script>\n";
 echo "\n";
 
 ?>
 
 <script type="text/javascript">
     window.onload = function () {
-        signIn_addEventListeners();
+        users_addEventListeners();
         eveApi_load();
     };
 </script>

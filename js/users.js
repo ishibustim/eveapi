@@ -2,11 +2,15 @@
 
 var usersPostURL = 'http://dev.ishibustim.homenet.org/passport/modules/webservice/users.php';
 
-function signIn_addEventListeners()
+var global_username = '';
+var global_password = '';
+
+function users_addEventListeners()
 {
     $('#signIn_register').click(beginRegister);
     $('#signIn_register_cancel').click(cancelRegister);
     $('#signIn_logIn').click(signIn);
+    $('#logOut').click(signOut);
 }//end addEventListeners
 
 function beginRegister()
@@ -80,7 +84,12 @@ function signIn()
             if (status == 'success') {
                 var result = $('result', data).text();
                 if (result == 'success') {
-                    alert('Signed In!');
+                    // sign in and display homepage
+                    global_username = username;
+                    global_password = password;
+                    $('#username').html(global_username);
+                    $('#preSignIn').addClass('hidden');
+                    $('#postSignIn').removeClass('hidden');
                 }//end if
                 else if (result == 'fail') {
                     alert('Username and Password do not match');
@@ -98,3 +107,11 @@ function signIn()
         alert('Password must be longer than 8 characters');
     }//end else
 }//end signIn
+
+function signOut() {
+    global_username = '';
+    global_password = '';
+    $('#postSignIn').addClass('hidden');
+    $('#preSignIn').removeClass('hidden');
+    $('#username').html('');
+}//end signOut
