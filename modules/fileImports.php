@@ -20,7 +20,7 @@ echo $indent . $linkCSSBase . $linkCSSDir . "newApiWindow.css" . $linkCSSSuffix;
 echo $indent . $linkCSSBase . $linkCSSDir . "signIn.css" . $linkCSSSuffix;
 
 // JQuery
-echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>\n";
+echo $indent . "<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>\n";
 
 // javascript
 echo $indent . "<script src='js/eveApi.js' type='text/javascript' defer></script>\n";
@@ -29,7 +29,7 @@ echo "\n";
 
 ?>
 
-<script>
+<script type="text/javascript">
     window.onload = function () {
         signIn_addEventListeners();
     };

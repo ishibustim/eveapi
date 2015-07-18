@@ -19,7 +19,7 @@
         <div id="signIn">
             <div><div class="label">Username:</div><input name="username" type="text" /></div>
             <div><div class="label">Password:</div><input name="password" type="password" /></div>
-            <div><div class="label">Verify Password:</div><input class="hidden" name="verifyPassword" type="password" /></div>
+            <div class="hidden"><div class="label">Verify Password:</div><input name="verifyPassword" type="password" /></div>
             <div class="buttons">
                 <input type="submit" value="Log In" id="signIn_logIn" />
                 <input type="submit" value="Register" id="signIn_register" />
