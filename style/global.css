@@ -10,3 +10,7 @@ body {
     width: auto;
     position: relative;
 }
+
+.hidden {
+    display: none;
+}
