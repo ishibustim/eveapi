@@ -43,7 +43,7 @@ function beginRegister()
                     if (result == 'success') {
                         alert('Account Created');
                         if (signIn()) {
-                            registering = false;
+                            cancelRegister();
                         }//end if
                     }//end if
                     else if (result == 'duplicate') {
