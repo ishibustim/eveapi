@@ -24,11 +24,23 @@ function closeWindow() {
     $.each(windowIDs, function () {
         if (!$(this).hasClass('hidden')) {
             $(this).addClass('hidden');
+            resetWindow(this);
         }//end if
     });//end each
 
     $(mainID).addClass('hidden');
 }//end closeWindow
+
+function resetWindow(targetID) {
+    switch (targetID) {
+        case '#settings':
+            // reset Settings window
+            $('input[name="oldPassword"]', targetID).val('');
+            $('input[name="newPassword"]', targetID).val('');
+            $('input[name="verifyPassword"]', targetID).val('');
+            break;
+    }//end switch
+}//end resetWindow
 
 function openSettings() {
     showWindow('#settings');

@@ -145,6 +145,11 @@ function changePassword() {
                     if (result == 'success') {
                         // store updated password for later calls
                         global_password = newPassword;
+
+                        // clear password fields
+                        $('input[name="oldPassword"]', '#changePasswordForm').val('');
+                        $('input[name="newPassword"]', '#changePasswordForm').val('');
+                        $('input[name="verifyPassword"]', '#changePasswordForm').val('');
                     }//end if
                     else if (result == 'incorrect') {
                         alert('Old password is incorrect');
