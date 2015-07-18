@@ -21,29 +21,29 @@ function serverTime_init() {
                 time_h = timeString[hIndex];
                 time_m = timeString[mIndex];
                 time_s = timeString[sIndex];
+
+                // Initialize the server time and set up an event to keep it updated
+                // (NOTE: time_h, time_m, and time_s are declared on the page
+                //        and are echo'd by index.php)
+                timeDiv = document.getElementById("serverTime");
+                timeDiv.innerHTML = time_h + ":" + time_m;
+                setInterval(function () {
+                    timeDiv.innerHTML = time_h + ":" + time_m;
+
+                    time_s++;
+                    if (time_s > 59) {
+                        time_s = 0;
+                        time_m++;
+                        if (time_m > 59) {
+                            time_m = 0;
+                            time_h++;
+                            if (time_h > 23) {
+                                time_h = 0;
+                            }//end if
+                        }//end if
+                    }//end if
+                }, 1000);//end setInterval
             }//end if
         }//end if
     });//end post
-
-    // Initialize the server time and set up an event to keep it updated
-    // (NOTE: time_h, time_m, and time_s are declared on the page
-    //        and are echo'd by index.php)
-    timeDiv = document.getElementById("serverTime");
-    timeDiv.innerHTML = time_h + ":" + time_m;
-    setInterval(function () {
-        timeDiv.innerHTML = time_h + ":" + time_m;
-
-        time_s++;
-        if (time_s > 59) {
-            time_s = 0;
-            time_m++;
-            if (time_m > 59) {
-                time_m = 0;
-                time_h++;
-                if (time_h > 23) {
-                    time_h = 0;
-                }//end if
-            }//end if
-        }//end if
-    }, 1000);//end setInterval
 }//end serverTime_init
