@@ -90,6 +90,11 @@ function signIn()
                     $('#username').html(global_username);
                     $('#preSignIn').addClass('hidden');
                     $('#postSignIn').removeClass('hidden');
+                    
+                    // clear sign in fields
+                    $('input[name="username"', '#signIn').val('');
+                    $('input[name="password"', '#signIn').val('');
+                    $('input[name="verifyPassword"', '#signIn').val('');
                 }//end if
                 else if (result == 'fail') {
                     alert('Username and Password do not match');
