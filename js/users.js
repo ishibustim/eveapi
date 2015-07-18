@@ -5,6 +5,17 @@ var usersPostURL = 'http://dev.ishibustim.homenet.org/passport/modules/webservic
 var global_username = '';
 var global_password = '';
 
+function users_init() {
+    users_addEventListeners();
+
+    if(sessionStorage.passport_username !== undefined
+        && sessionStorage.passport_username != ''
+        && sessionStorage.passport_password !== undefined
+        && sessionStorage.passport_password != '') {
+        signIn(sessionStorage.passport_username, sessionStorage.passport_password);
+    }//end if
+}//end users_init
+
 function users_addEventListeners()
 {
     $('#signIn_register').click(beginRegister);
@@ -76,10 +87,12 @@ function cancelRegister()
     }//end if
 }//end cancelRegister
 
-function signIn()
+function signIn(username, password)
 {
-    var username = $('input[name="username"]').val();
-    var password = $('input[name="password"]').val();
+    if (username === undefined || username == '' || password === undefined || password == '') {
+        username = $('input[name="username"]').val();
+        password = $('input[name="password"]').val();
+    }//end if
 
     if (password.length >= 8) {
         $.post(usersPostURL, {
@@ -93,6 +106,8 @@ function signIn()
                     // sign in and display homepage
                     global_username = username;
                     global_password = password;
+                    sessionStorage.passport_username = global_username;
+                    sessionStorage.passport_password = global_password;
                     $('#username').html(global_username);
                     $('#preSignIn').addClass('hidden');
                     $('#postSignIn').removeClass('hidden');
@@ -126,6 +141,8 @@ function signIn()
 function signOut() {
     global_username = '';
     global_password = '';
+    sessionStorage.passport_username = '';
+    sessionStorage.passport_password = '';
     $('#postSignIn').addClass('hidden');
     $('#preSignIn').removeClass('hidden');
     $('#username').html('');
@@ -151,6 +168,7 @@ function changePassword() {
                     if (result == 'success') {
                         // store updated password for later calls
                         global_password = newPassword;
+                        sessionStorage.passport_password = global_password;
 
                         // clear password fields
                         $('input[name="oldPassword"]', '#changePasswordForm').val('');
