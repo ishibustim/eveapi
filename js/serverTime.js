@@ -19,7 +19,11 @@ function serverTime_init() {
                     ((serverDateTime.getMinutes() < 10) ? '0' : '') +
                     serverDateTime.getMinutes();
                 setInterval(function () {
-                    timeDiv.innerHTML = serverDateTime.getHours() + ":" + serverDateTime.getMinutes();
+                    timeDiv.innerHTML = ((serverDateTime.getHours() < 10) ? '0' : '') +
+                    serverDateTime.getHours() +
+                    ":" +
+                    ((serverDateTime.getMinutes() < 10) ? '0' : '') +
+                    serverDateTime.getMinutes();
 
                     serverDateTime.setSeconds(serverDateTime.getSeconds() + 1);
                 }, 1000);//end setInterval
