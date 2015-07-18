@@ -51,7 +51,7 @@
 
         <!-- Main Content -->
         <div id="main">
-
+            <div id="closeButton"><i class="fa fa-times-circle fa-inverse"></i></div>
             <div id="settings" class="UI_Window hidden">
                 <div>
                     <h1>Change Password</h1>

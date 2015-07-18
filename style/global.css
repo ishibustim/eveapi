@@ -20,6 +20,12 @@ body {
     border-radius: 5px;
 }
 
+#main #closeButton {
+    position: absolute;
+    top: -5px;
+    right: calc(100% + 5px);
+}
+
 .hidden {
     display: none !important;
 }
