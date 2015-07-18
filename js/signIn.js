@@ -29,12 +29,17 @@ function beginRegister()
                 password: password,
                 verifyPassword: verifyPassword
             }, function (data, status, xhr) {
-                console.log(data);
-                console.log(status);
                 if (status == 'success') {
-                    var result = $('result', data).html();
-                    if(result == 'success')
+                    var result = $('result', data).text();
+                    if (result == 'success') {
                         alert('Account Created');
+                    }//end if
+                    else if (result == 'duplicate') {
+                        alert('Username already exists');
+                    }
+                    else {
+                        alert('Could not create account');
+                    }//end else
                 }//end if
                 else
                     alert('Could not create account');

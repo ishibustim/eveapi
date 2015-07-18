@@ -43,6 +43,10 @@ if(isset($_POST['action']))
 
                     echo '<xml><result>success</result></xml>';
                 }//end if
+                else
+                {
+                    echo '<xml><result>duplicate</result></xml>';
+                }
             }//end if
             break;
         case "signIn":
