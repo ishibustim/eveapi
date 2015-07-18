@@ -1,34 +1,6 @@
 var timeDiv;
 function eveApi_load()
 {
-  // Initialize the server time and set up an event to keep it updated
-  // (NOTE: time_h, time_m, and time_s are declared on the page
-  //        and are echo'd by index.php)
-  timeDiv = document.getElementById("serverTime");
-  timeDiv.innerHTML = ((time_h < 10) ? "0" : "") + time_h + ":" +
-    ((time_m < 10) ? "0" : "") + time_m;
-  setInterval(function()
-              {
-                timeDiv.innerHTML = ((time_h < 10) ? "0" : "") + time_h + ":" +
-                  ((time_m < 10) ? "0" : "") + time_m;
-
-                time_s++;
-                if(time_s > 59)
-                {
-                  time_s = 0;
-                  time_m++;
-                  if(time_m > 59)
-                  {
-                    time_m = 0;
-                    time_h++;
-                    if(time_h > 23)
-                    {
-                      time_h = 0;
-                    }//end if
-                  }//end if
-                }//end if
-              }, 1000);//end setInterval
-
   // Set up default event listeners on the page
   eveApi_initEventListeners();
 };//end window.onload
