@@ -21,10 +21,10 @@ function showWindow(targetID) {
 }//end showWindow
 
 function closeWindow() {
-    $.each(windowIDs, function () {
-        if (!$(this).hasClass('hidden')) {
-            $(this).addClass('hidden');
-            resetWindow(this);
+    $.each(windowIDs, function (index, value) {
+        if (!$(windowIDs[index]).hasClass('hidden')) {
+            $(windowIDs[index]).addClass('hidden');
+            resetWindow(windowIDs[index]);
         }//end if
     });//end each
 
