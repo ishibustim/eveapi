@@ -32,5 +32,6 @@ echo "\n";
 <script type="text/javascript">
     window.onload = function () {
         signIn_addEventListeners();
+        eveApi_load();
     };
 </script>

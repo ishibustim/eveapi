@@ -1,5 +1,5 @@
 var timeDiv;
-window.onload = function()
+function eveApi_load()
 {
   // Initialize the server time and set up an event to keep it updated
   // (NOTE: time_h, time_m, and time_s are declared on the page
@@ -30,10 +30,10 @@ window.onload = function()
               }, 1000);//end setInterval
 
   // Set up default event listeners on the page
-  initEventListeners();
+  eveApi_initEventListeners();
 };//end window.onload
 
-var initEventListeners = function()
+function eveApi_initEventListeners()
 {
   // Event listener for entering new API keys
   // This is called by clicking the Add Api option in the character select menu
