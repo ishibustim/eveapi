@@ -1,6 +1,6 @@
 #navbar {
     height: 100%;
-    width: 60px;
+    width: 64px;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -11,8 +11,8 @@
     background: rgba(51, 51, 51, 1);
     top: 40px;
     left: 0px;
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     max-height: 75%;
     overflow: hidden;
     /*transition: height 1s, width 0.5s 1s;*/
@@ -29,12 +29,12 @@
 }
 
 #chars.hide:hover {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
 }
 
 .charItem {
-    height: 60px;
+    height: 64px;
     padding: 0px 10px 0px 70px;
     display: block;
     position: relative;
@@ -51,28 +51,28 @@
 }
 
 .charImg {
-    height: 60px;
-    width: 60px;
+    height: 64px;
+    width: 64px;
     background-image: url('images/character.png');
-    background-size: 60px 60px;
+    background-size: 64px 64px;
     position: absolute;
     top: 0px;
     left: 0px;
 }
 
 .charImg img {
-    height: 60px;
-    width: 60px;
+    height: 64px;
+    width: 64px;
 }
 
 .charNew {
-    height: 60px;
-    width: 60px;
+    height: 64px;
+    width: 64px;
     position: absolute;
     top: 0px;
     left: 0px;
     text-align: center;
-    line-height: 60px;
+    line-height: 64px;
     font-size: 24pt;
     font-weight: bold;
 }
@@ -81,7 +81,7 @@
     position: absolute;
     bottom: 0px;
     left: 0px;
-    width: 60px;
+    width: 64px;
     height: 20px;
     line-height: 20px;
     font-size: 8pt;

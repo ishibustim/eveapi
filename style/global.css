@@ -6,8 +6,8 @@ body {
 }
 
 #main {
-    margin-left: 60px;
-    width: calc(100% - 60px);
+    margin-left: 64px;
+    width: calc(100% - 64px);
     height: 100%;
 }
 
