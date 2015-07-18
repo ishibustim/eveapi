@@ -107,7 +107,7 @@ if(isset($_POST['action']))
             }//end if
             else
             {
-                echo '<xml><result>Unknown Error</result></xml>';
+                echo '<xml><result>Missing arguments</result></xml>';
             }//end else
             break;
     }//end switch

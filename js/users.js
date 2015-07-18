@@ -96,15 +96,15 @@ function signIn()
                     $('#postSignIn').removeClass('hidden');
                     
                     // clear sign in fields
-                    $('input[name="username"', '#signIn').val('');
-                    $('input[name="password"', '#signIn').val('');
-                    $('input[name="verifyPassword"', '#signIn').val('');
+                    $('input[name="username"]', '#signIn').val('');
+                    $('input[name="password"]', '#signIn').val('');
+                    $('input[name="verifyPassword"]', '#signIn').val('');
                 }//end if
                 else if (result == 'fail') {
                     alert('Username and Password do not match');
                 }//end else if
                 else {
-                    alert('Unknown Error');
+                    alert(result);
                 }//end else
             }//end if
             else {
@@ -149,7 +149,7 @@ function changePassword() {
                         alert('Old password is incorrect');
                     }//end else if
                     else {
-                        alert('Unknown Error');
+                        alert(result);
                     }//end else
                 }//end if
                 else {
