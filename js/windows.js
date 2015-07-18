@@ -2,6 +2,8 @@
     '#settings'
 ];
 
+var mainID = '#main';
+
 function windows_addEventListeners() {
     $('#openSettings').click(openSettings);
 }//end addEventListeners
@@ -14,6 +16,7 @@ function showWindow(targetID) {
     }//end for
 
     $(targetID).removeClass('hidden');
+    $(mainID).removeClass('hidden');
 }//end showWindow
 
 function openSettings() {

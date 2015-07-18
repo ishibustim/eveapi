@@ -50,7 +50,7 @@
         </div>
 
         <!-- Main Content -->
-        <div id="main">
+        <div id="main" class="hidden">
             <div id="closeButton fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-1x"></i>
                 <i class="fa fa-times-circle fa-inverse fa-stack-1x"></i>
