@@ -22,8 +22,9 @@ body {
 
 #main #closeButton {
     position: absolute;
-    top: -5px;
-    right: calc(100% + 5px);
+    top: -14px;
+    right: -15px;
+    cursor: pointer;
 }
 
 .hidden {
