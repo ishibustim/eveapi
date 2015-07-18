@@ -99,8 +99,6 @@ function signIn()
                     $('input[name="username"]', '#signIn').val('');
                     $('input[name="password"]', '#signIn').val('');
                     $('input[name="verifyPassword"]', '#signIn').val('');
-
-                    alert('Password changed');
                 }//end if
                 else if (result == 'fail') {
                     alert('Username and Password do not match');
@@ -152,6 +150,8 @@ function changePassword() {
                         $('input[name="oldPassword"]', '#changePasswordForm').val('');
                         $('input[name="newPassword"]', '#changePasswordForm').val('');
                         $('input[name="verifyPassword"]', '#changePasswordForm').val('');
+
+                        alert('Password changed');
                     }//end if
                     else if (result == 'incorrect') {
                         alert('Old password is incorrect');
