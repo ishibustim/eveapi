@@ -99,6 +99,8 @@ function signIn()
                     $('input[name="username"]', '#signIn').val('');
                     $('input[name="password"]', '#signIn').val('');
                     $('input[name="verifyPassword"]', '#signIn').val('');
+
+                    alert('Password changed');
                 }//end if
                 else if (result == 'fail') {
                     alert('Username and Password do not match');

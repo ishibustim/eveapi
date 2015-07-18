@@ -32,14 +32,12 @@ function closeWindow() {
 }//end closeWindow
 
 function resetWindow(targetID) {
-    switch (targetID) {
-        case '#settings':
-            // reset Settings window
-            $('input[name="oldPassword"]', targetID).val('');
-            $('input[name="newPassword"]', targetID).val('');
-            $('input[name="verifyPassword"]', targetID).val('');
-            break;
-    }//end switch
+    if (targetID == '#settings') {
+        // reset Settings window
+        $('input[name="oldPassword"]', targetID).val('');
+        $('input[name="newPassword"]', targetID).val('');
+        $('input[name="verifyPassword"]', targetID).val('');
+    }//end if
 }//end resetWindow
 
 function openSettings() {
