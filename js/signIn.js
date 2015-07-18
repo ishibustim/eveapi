@@ -1,6 +1,6 @@
 ﻿var registering = false;
 
-var usersPostURL = 'https://dev.ishibustim.homenet.org/passport/modules/webservice/users.php';
+var usersPostURL = 'http://dev.ishibustim.homenet.org/passport/modules/webservice/users.php';
 
 function signIn_addEventListeners()
 {
@@ -29,8 +29,13 @@ function beginRegister()
                 password: password,
                 verifyPassword: verifyPassword
             }, function (data, status, xhr) {
-                if (status == 'success')
-                    alert('Account Created');
+                console.log(data);
+                console.log(status);
+                if (status == 'success') {
+                    var result = $('result', data).html();
+                    if(result == 'success')
+                        alert('Account Created');
+                }//end if
                 else
                     alert('Could not create account');
             });//end $.post
