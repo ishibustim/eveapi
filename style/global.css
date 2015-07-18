@@ -3,12 +3,21 @@ body {
     padding: 0;
     margin: 0;
     background-image: url('images/m-07.jpg');
+    background-attachment: fixed;
 }
 
 #main {
-    margin-left: 64px;
-    width: auto;
+    position: fixed;
+    width: 75%;
     height: auto;
+    padding: 0;
+    top: 40px;
+    left: calc(((100% - 75%) / 2) + 64px);
+    z-index: 1;
+}
+
+#main > * {
+    border-radius: 5px;
 }
 
 .hidden {
@@ -16,6 +25,7 @@ body {
 }
 
 .UI_Window {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.85);
     color: white;
+    box-shadow: 0px 0px 10px 2px #77CCFF;
 }
