@@ -42,7 +42,9 @@ function beginRegister()
                     var result = $('result', data).text();
                     if (result == 'success') {
                         alert('Account Created');
-                        signIn();
+                        if (signIn()) {
+                            registering = false;
+                        }//end if
                     }//end if
                     else if (result == 'duplicate') {
                         alert('Username already exists');
@@ -99,6 +101,8 @@ function signIn()
                     $('input[name="username"]', '#signIn').val('');
                     $('input[name="password"]', '#signIn').val('');
                     $('input[name="verifyPassword"]', '#signIn').val('');
+
+                    return true;
                 }//end if
                 else if (result == 'fail') {
                     alert('Username and Password do not match');
@@ -115,6 +119,8 @@ function signIn()
     else {
         alert('Password must be longer than 8 characters');
     }//end else
+
+    return false;
 }//end signIn
 
 function signOut() {
