@@ -14,6 +14,7 @@ echo $indent . $linkCSSBase . $linkCSSDir . "userInfo.css" . $linkCSSSuffix;
 echo $indent . $linkCSSBase . $linkCSSDir . "navbar.css" . $linkCSSSuffix;
 echo $indent . $linkCSSBase . $linkCSSDir . "newApiWindow.css" . $linkCSSSuffix;
 echo $indent . $linkCSSBase . $linkCSSDir . "signIn.css" . $linkCSSSuffix;
+echo $indent . $linkCSSBase . $linkCSSDir . "settings.css" . $linkCSSSuffix;
 
 // JQuery
 echo $indent . "<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>\n";

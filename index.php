@@ -52,8 +52,7 @@
         <!-- Main Content -->
         <div id="main">
 
-            <div id="settings" class="UI_Window">
-
+            <div id="settings" class="UI_Window hidden">
                 <h1>Change Password</h1>
                 <div><div class="label">Old Password:</div><input type="password" /></div>
                 <div><div class="label">New Password:</div><input type="password" /></div>
@@ -61,7 +60,6 @@
                 <div class="buttons">
                     <input type="submit" value ="Submit" id="changePassword" />
                 </div>
-
             </div>
 
         </div>
