@@ -9,7 +9,7 @@ function serverTime_init() {
     $.post(apiBaseURL + statusURL, '', function (data, status, xhr) {
         if (status == 'success') {
             var timeString = $('currentTime', data).text();
-            var regex = new RegExp('/(\d{2}):(\d{2}):(\d{2})/');
+            var regex = /(\d{2}):(\d{2}):(\d{2})/;
             timeString = regex.exec(timeString);
             alert(timeString);
         }//end if
