@@ -58,11 +58,11 @@
                 </div>
             </div>
             <div id="settings" class="UI_Window hidden">
-                <div>
+                <div id="changePasswordForm">
                     <h1>Change Password</h1>
-                    <div><div class="label">Old Password:</div><input type="password" /></div>
-                    <div><div class="label">New Password:</div><input type="password" /></div>
-                    <div><div class="label">Verify Password:</div><input tpye="password" /></div>
+                    <div><div class="label">Old Password:</div><input type="password" name="oldPassword" /></div>
+                    <div><div class="label">New Password:</div><input type="password" name="newPassword"/></div>
+                    <div><div class="label">Verify Password:</div><input type="password" name ="verifyPassword"/></div>
                     <div class="buttons">
                         <input type="submit" value ="Submit" id="changePassword" />
                     </div>

@@ -11,6 +11,7 @@ function users_addEventListeners()
     $('#signIn_register_cancel').click(cancelRegister);
     $('#signIn_logIn').click(signIn);
     $('#logOut').click(signOut);
+    $('#changePassword').click(changePassword);
 }//end addEventListeners
 
 function beginRegister()
@@ -26,7 +27,10 @@ function beginRegister()
         var password = $('input[name="password"]').val();
         var verifyPassword = $('input[name="verifyPassword"]').val();
 
-        if (password == verifyPassword && password.length >= 8) {
+        if (username.length < 4) {
+            alert('Username must be at least 4 characters long');
+        }//end if
+        else if (password == verifyPassword && password.length >= 8) {
             // register with webservice
             $.post(usersPostURL, {
                 action: 'newUser',
@@ -120,3 +124,41 @@ function signOut() {
     $('#preSignIn').removeClass('hidden');
     $('#username').html('');
 }//end signOut
+
+function changePassword() {
+    var username = global_username;
+    var password = $('input[name="oldPassword"]', '#changePasswordForm').val();
+    var newPassword = $('input[name="newPassword"]', '#changePasswordForm').val();
+    var verifyPassword = $('input[name="verifyPassword"]', '#changePasswordForm').val();
+
+    if (password.length >= 8 && newPassword.length >= 8) {
+        if (newPassword == verifyPassword) {
+            $.post(usersPostURL, {
+                username: username,
+                password: password,
+                newPassword: newPassword,
+                verifyPassword: verifyPassword
+            }, function (data, status, xhr) {
+                if (status == 'success') {
+                    var result = $('result', data).text();
+                    if (result == 'success') {
+                        // store updated password for later calls
+                        global_password = newPassword;
+                    }//end if
+                    else {
+                        alert('Unknown Error');
+                    }//end else
+                }//end if
+                else {
+                    alert('Error connecting to web service');
+                }//end else
+            });//end post
+        }//end if
+        else {
+            alert('Passwords must match');
+        }//end else
+    }//end if
+    else {
+        alert('Password must be longer than 8 characters');
+    }//end else
+}//end changePassword
