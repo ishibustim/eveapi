@@ -63,7 +63,7 @@ if(isset($_POST['action']))
             {
                 // Simply have to return success or fail
                 $sql = "SELECT UserID, Password FROM Users WHERE UserID LIKE '" . mysql_real_escape_string($_POST['username']) . "'";
-                $result = mysql_query($result);
+                $result = mysql_query($sql);
                 // cannot have duplicate UserIDs, so the first result (if any) is the correct one
                 if(mysql_num_rows($result) > 0)
                 {
