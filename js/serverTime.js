@@ -2,6 +2,8 @@
 var time_m;
 var time_s;
 
+var serverDateTime;
+
 function serverTime_init() {
     var apiBaseURL = 'https://api.eveonline.com';
     var statusURL = '/server/ServerStatus.xml.aspx';
@@ -17,6 +19,9 @@ function serverTime_init() {
             var regex = /(\d{2})\:(\d{2})\:(\d{2})/;
             var timeString = regex.exec(rawTimeString);
             
+            serverDateTime = new Date(rawTimeString);
+            console.log(serverDateTime);
+
             if (timeString != null) {
                 time_h = timeString[hIndex];
                 time_m = timeString[mIndex];
