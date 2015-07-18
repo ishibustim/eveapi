@@ -111,6 +111,8 @@ if(isset($_POST['action']))
             }//end else
             break;
     }//end switch
+
+    mysql_close($conn);
 }//end if
 
 function connectToDatabase($hostname, $username, $password, $database_name, &$conn, &$db_selected)
@@ -135,14 +137,13 @@ function connectToDatabase($hostname, $username, $password, $database_name, &$co
 function verifyUser($username, $password)
 {
     // Simply have to return success or fail
-    $sql = "SELECT UserID, Password FROM Users WHERE UserID LIKE '" . mysql_real_escape_string($_POST['username']) . "'";
+    $sql = "SELECT UserID, Password FROM Users WHERE UserID LIKE '" . mysql_real_escape_string($username) . "'";
     $result = mysql_query($sql);
     // cannot have duplicate UserIDs, so the first result (if any) is the correct one
     if(mysql_num_rows($result) > 0)
     {
         $row = mysql_fetch_array($result);
         $storedPassword = $row['Password'];
-        $password = $_POST['password'];
 
         // matching salted & hashed password based on http://stackoverflow.com/questions/3273293/salting-my-hashes-with-php-and-mysql
 
