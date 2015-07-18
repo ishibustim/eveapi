@@ -1,7 +1,7 @@
 <?php
 
 // Set SQL login
-include 'modules/sql_login.php';
+include 'sql_login.php';
 
 $indent = "    ";
 $linkCSSBase = "<link rel='stylesheet' type='text/css' href='";
