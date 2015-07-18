@@ -31,7 +31,7 @@ echo "\n";
 <script type="text/javascript">
     window.onload = function () {
         serverTime_init();
-        users_addEventListeners();
+        users_init();
         windows_addEventListeners();
         eveApi_load();
     };
