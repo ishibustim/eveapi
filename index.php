@@ -1,7 +1,6 @@
 <html>
   <head>
     <?php
-        include 'module/sql_login.php';
         include 'modules/fileImports.php';
     ?>
   </head>
