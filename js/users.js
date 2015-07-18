@@ -12,7 +12,11 @@ function users_init() {
         && sessionStorage.passport_username != ''
         && sessionStorage.passport_password !== undefined
         && sessionStorage.passport_password != '') {
-        signIn(sessionStorage.passport_username, sessionStorage.passport_password);
+        if (!signIn(sessionStorage.passport_username, sessionStorage.passport_password)) {
+            // clear session variables if sign in did not work
+            sessionStorage.passport_username = '';
+            sessionStorage.passport_password = '';
+        }//end if
     }//end if
 }//end users_init
 
