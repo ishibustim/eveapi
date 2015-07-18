@@ -5,11 +5,6 @@
     ?>
   </head>
   <body>
-    <?php
-        // Include backend modules
-        include 'modules/apiModules/apiImports.php';
-    ?>
-
     <div id="preSignIn">
         <div id="signIn" class="UI_Window">
             <div><div class="label">Username:</div><input name="username" type="text" /></div>
