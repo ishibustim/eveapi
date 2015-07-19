@@ -13,7 +13,7 @@ body {
     height: auto;
     padding: 0;
     top: 40px;
-    left: calc(((100% - 75%) / 2) + 64px);
+    left: calc((100% - 75%) / 2);
     z-index: 1;
 }
 
