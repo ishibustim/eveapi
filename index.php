@@ -7,6 +7,7 @@
         }//end if
         include 'modules/fileImports.php';
     ?>
+    <title>EVE Passport</title>
   </head>
   <body>
     <div id="preSignIn">
