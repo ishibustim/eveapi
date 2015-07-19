@@ -14,7 +14,7 @@ function serverTime_init() {
                 serverDateTime = new Date(rawTimeString);
 
                 // Set inital time
-                $('#serverTime').html(formatServerTime(serverDateTime.getHours()) +
+                $('#serverTime').html(formatServerTime(serverDateTime.getUTCHours()) +
                     ':' +
                     formatServerTime(serverDateTime.getMinutes()));
 
@@ -34,7 +34,7 @@ function updateServerTime() {
     serverDateTime.setSeconds(0);
     serverDateTime.setMinutes(serverDateTime.getMinutes() + 1);
 
-    var hour = formatServerTime(serverDateTime.getHours());
+    var hour = formatServerTime(serverDateTime.getUTCHours());
     var minute = formatServerTime(serverDateTime.getMinutes());
 
     var timeDiv = $('#serverTime').html(hour + ':' + minute);
