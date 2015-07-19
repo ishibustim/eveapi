@@ -9,6 +9,9 @@ function serverTime_init() {
             var rawTimeString = $('currentTime', data).text();            
             serverDateTime = new Date(rawTimeString);
 
+            console.log(rawTimeString);
+            console.log(serverDateTime);
+
             if (rawTimeString != null) {
                 // Set inital time
                 $('#serverTime').html(formatServerTime(serverDateTime.getHours()) +
