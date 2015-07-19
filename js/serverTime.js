@@ -11,7 +11,7 @@ function serverTime_init() {
 
             if (rawTimeString != null) {
                 // Initialize the server time and set up an event to keep it updated
-                setInterval(updateServerTime(), 1000); // 1000 = 1 second
+                setInterval(updateServerTime, 1000); // 1000 = 1 second
                 // Immediately update the server time rather than wait the first second
                 updateServerTime();
             }//end if
@@ -24,8 +24,6 @@ function updateServerTime() {
 
     var hour = formatServerTime(serverDateTime.getHours());
     var minute = formatServerTime(serverDateTime.getMinutes());
-
-    console.log(hour + ':' + minute);
 
     var timeDiv = $('#serverTime').html(hour + ':' + minute);
 }//end updateServerTime
