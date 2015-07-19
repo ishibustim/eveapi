@@ -22,8 +22,6 @@ function serverTime_init() {
                     // set recurring event every minute
                     setInterval(updateServerTime, ((1 * 1000) * 60)); // (1 second * 1000 ms) * 60s
                 }, 60 - serverDateTime.getSeconds()); // get seconds until next minute change
-                // Immediately update the server time rather than wait the first second
-                updateServerTime();
             }//end if
         }//end if
     });//end post
