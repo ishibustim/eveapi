@@ -6,13 +6,16 @@ function serverTime_init() {
 
     $.post(apiBaseURL + statusURL, '', function (data, status, xhr) {
         if (status == 'success') {
-            var rawTimeString = $('currentTime', data).text();            
-            serverDateTime = new Date(rawTimeString);
-
-            console.log(rawTimeString);
-            console.log(serverDateTime);
-
+            var rawTimeString = $('currentTime', data).text();
             if (rawTimeString != null) {
+                // Replace the space between the date and time with a capital T
+                // While Chrome is not picky about this, FF and IE appear to be
+                rawTimeString = rawTimeString.replace(' ', 'T');
+                serverDateTime = new Date(rawTimeString);
+
+                console.log(rawTimeString);
+                console.log(serverDateTime);
+
                 // Set inital time
                 $('#serverTime').html(formatServerTime(serverDateTime.getHours()) +
                     ':' +
