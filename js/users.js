@@ -1,6 +1,6 @@
 ﻿var registering = false;
 
-var usersPostURL = 'http://dev.ishibustim.homenet.org/passport/modules/webservice/users.php';
+var usersPostURL = 'https://dev.ishibustim.homenet.org/passport/modules/webservice/users.php';
 
 var global_username = '';
 var global_password = '';

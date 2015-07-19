@@ -1,4 +1,6 @@
 <?php
+header('Access-Control-Allow-Origin: https://ishibustim.homenet.org');
+header('Access-Control-Allow-Origin: https://dev.ishibustim.homenet.org');
 
 include '../sql_login.php';
 
