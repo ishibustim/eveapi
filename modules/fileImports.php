@@ -30,9 +30,12 @@ echo "\n";
 
 <script type="text/javascript">
     window.onload = function () {
-        serverTime_init();
         users_init();
         windows_addEventListeners();
         eveApi_load();
+
+        // Run the server time process last so (hopefully) nothing will delay the results
+        // (which would cause an incorrect time)
+        serverTime_init();
     };
 </script>

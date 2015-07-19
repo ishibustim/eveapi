@@ -8,26 +8,26 @@ function serverTime_init() {
         if (status == 'success') {
             var rawTimeString = $('currentTime', data).text();            
             serverDateTime = new Date(rawTimeString);
-            console.log(serverDateTime);
 
             if (rawTimeString != null) {
                 // Initialize the server time and set up an event to keep it updated
-                timeDiv = document.getElementById("serverTime");
-                timeDiv.innerHTML = ((serverDateTime.getHours() < 10) ? '0' : '') +
-                    serverDateTime.getHours() +
-                    ":" +
-                    ((serverDateTime.getMinutes() < 10) ? '0' : '') +
-                    serverDateTime.getMinutes();
-                setInterval(function () {
-                    timeDiv.innerHTML = ((serverDateTime.getHours() < 10) ? '0' : '') +
-                    serverDateTime.getHours() +
-                    ":" +
-                    ((serverDateTime.getMinutes() < 10) ? '0' : '') +
-                    serverDateTime.getMinutes();
-
-                    serverDateTime.setSeconds(serverDateTime.getSeconds() + 1);
-                }, 1000);//end setInterval
+                setInterval(updateServerTime(), 1000); // 1000 = 1 second
+                // Immediately update the server time rather than wait the first second
+                updateServerTime();
             }//end if
         }//end if
     });//end post
 }//end serverTime_init
+
+function updateServerTime() {
+    serverDateTime.setSeconds(serverDateTime.getSeconds() + 1);
+
+    var hour = formatServerTime(serverDateTime.getHours());
+    var minute = formatServerTime(serverDateTime.getMinutes());
+
+    var timeDiv = $('#serverTime').html(hour + ':' + minute);
+}//end updateServerTime
+
+function formatServerTime(value) {
+    return ((value < 10) ? '0' : '') + value;
+}//end formatServerTime
