@@ -25,6 +25,8 @@ function updateServerTime() {
     var hour = formatServerTime(serverDateTime.getHours());
     var minute = formatServerTime(serverDateTime.getMinutes());
 
+    console.log(hour + ':' + minute);
+
     var timeDiv = $('#serverTime').html(hour + ':' + minute);
 }//end updateServerTime
 
