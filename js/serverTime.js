@@ -10,8 +10,18 @@ function serverTime_init() {
             serverDateTime = new Date(rawTimeString);
 
             if (rawTimeString != null) {
+                // Set inital time
+                $('#serverTime').html(formatServerTime(serverDateTime.getHours()) +
+                    ':' +
+                    formatServerTime(serverDateTime.getMinutes()));
+
                 // Initialize the server time and set up an event to keep it updated
-                setInterval(updateServerTime, 1000); // 1000 = 1 second
+                setTimeout(function () {
+                    updateServerTime();
+
+                    // set recurring event every minute
+                    setInterval(updateServerTime, ((1 * 1000) * 60)); // (1 second * 1000 ms) * 60s
+                }, 60 - serverDateTime.getSeconds()); // get seconds until next minute change
                 // Immediately update the server time rather than wait the first second
                 updateServerTime();
             }//end if
@@ -20,7 +30,8 @@ function serverTime_init() {
 }//end serverTime_init
 
 function updateServerTime() {
-    serverDateTime.setSeconds(serverDateTime.getSeconds() + 1);
+    serverDateTime.setSeconds(0);
+    serverDateTime.setMinutes(serverDateTime.getMinutes() + 1);
 
     var hour = formatServerTime(serverDateTime.getHours());
     var minute = formatServerTime(serverDateTime.getMinutes());
