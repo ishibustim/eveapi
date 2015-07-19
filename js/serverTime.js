@@ -13,9 +13,6 @@ function serverTime_init() {
                 rawTimeString = rawTimeString.replace(' ', 'T');
                 serverDateTime = new Date(rawTimeString);
 
-                console.log(rawTimeString);
-                console.log(serverDateTime);
-
                 // Set inital time
                 $('#serverTime').html(formatServerTime(serverDateTime.getHours()) +
                     ':' +
@@ -27,7 +24,7 @@ function serverTime_init() {
 
                     // set recurring event every minute
                     setInterval(updateServerTime, ((1 * 1000) * 60)); // (1 second * 1000 ms) * 60s
-                }, 60 - serverDateTime.getSeconds()); // get seconds until next minute change
+                }, (60 - serverDateTime.getSeconds()) * 1000); // get seconds until next minute change
             }//end if
         }//end if
     });//end post
