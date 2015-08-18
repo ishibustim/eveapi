@@ -23,7 +23,7 @@ echo $indent . "<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/
 
 // javascript
 echo $indent . "<script src='js/eveApi.js' type='text/javascript' defer></script>\n";
-echo $indent . "<script src='js/serverTime.js' type='text/javascript' defer></script>\n";
+echo $indent . "<script src='js/serverStatus.js' type='text/javascript' defer></script>\n";
 echo $indent . "<script src='js/users.js' type='text/javascript' defer></script>\n";
 echo $indent . "<script src='js/windows.js' type='text/javascript' defer></script>\n";
 
@@ -42,6 +42,6 @@ echo "\n";
 
         // Run the server time process last so (hopefully) nothing will delay the results
         // (which would cause an incorrect time)
-        serverTime_init();
+        serverStatus_init();
     };
 </script>

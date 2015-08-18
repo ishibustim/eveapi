@@ -2,7 +2,7 @@
 var serverStatus;
 var serverPopulation;
 
-function serverTime_init() {
+function serverStatus_init() {
     var apiBaseURL = 'https://api.eveonline.com';
     var statusURL = '/server/ServerStatus.xml.aspx';
 
@@ -15,7 +15,7 @@ function serverTime_init() {
             }//end if
             else {
                 $('#serverTimeHoverTemplate .TQServerStatus').html('Offline').css({ color: 'red' });
-            }
+            }//end else
 
             // Set server population
             serverPopulation = $('onlinePlayers', data).text();
