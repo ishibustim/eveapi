@@ -22,7 +22,7 @@ function serverTime_init() {
             $('#serverTimeHoverTemplate .TQPlayerCount').html(serverPopulation);
 
             // Activate HoverBox for the server time element
-            $('#serverTime').attr({ HBTitle: 'Server Status', HBBodyElem: '#serverTimeHoverTemplate' });
+            $('#serverTime').attr({ hbtitle: 'Server Status', hbbodyelem: '#serverTimeHoverTemplate' });
 
             // Set server time
             var rawTimeString = $('currentTime', data).text();

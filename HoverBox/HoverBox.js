@@ -3,9 +3,9 @@ function HoverBoxObj() {
 
   me.hasTooltipClass = '.HBHasHoverBox';
 
-  me.dataTitle = 'HBTitle';
-  me.dataBody = 'HBBody';
-  me.dataBodyElem = 'HBBodyElem';
+  me.dataTitle = 'hbtitle';
+  me.dataBody = 'hbbody';
+  me.dataBodyElem = 'hbbodyelem';
 
   me.tooltipHeaderClass = 'HBHeader';
   me.tooltipBodyClass = 'HBBody';
