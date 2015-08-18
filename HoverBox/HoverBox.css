@@ -1,0 +1,33 @@
+.HBTemplate {
+    display: none;
+}
+
+#HoverBox {
+    font-family: sans-serif;
+    color: white;
+    display: none;
+    position: fixed;
+    width: 400px;
+    box-shadow: 0px 0px 10px 0px #777777;
+}
+
+#HoverBox .HBHeader, #HoverBox .HBBody {
+    padding: 10px;
+    font-weight: 100;
+}
+
+#HoverBox .HBHeader {
+    background-color: rgba(0, 150, 235, 0.75);
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+#HoverBox .HBBody {
+    background-color: rgba(0, 0, 0, 0.85);
+    min-height: 100px;
+}
+
+#HoverBox .HBBody .HBTemplate {
+    display: block;
+}

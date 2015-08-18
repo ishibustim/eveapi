@@ -16,6 +16,8 @@ echo $indent . $linkCSSBase . $linkCSSDir . "newApiWindow.css" . $linkCSSSuffix;
 echo $indent . $linkCSSBase . $linkCSSDir . "signIn.css" . $linkCSSSuffix;
 echo $indent . $linkCSSBase . $linkCSSDir . "settings.css" . $linkCSSSuffix;
 
+
+
 // JQuery
 echo $indent . "<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>\n";
 
@@ -24,6 +26,10 @@ echo $indent . "<script src='js/eveApi.js' type='text/javascript' defer></script
 echo $indent . "<script src='js/serverTime.js' type='text/javascript' defer></script>\n";
 echo $indent . "<script src='js/users.js' type='text/javascript' defer></script>\n";
 echo $indent . "<script src='js/windows.js' type='text/javascript' defer></script>\n";
+
+// HoverBox
+echo $indent . $linkCSSBase . "HoverBox/HoverBox.css" . $linkCSSSuffix;
+echo $indent . "<script src='HoverBox/HoverBox.js' type='text/javascript' defer></script>\n";
 echo "\n";
 
 ?>

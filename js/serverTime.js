@@ -1,4 +1,6 @@
 ﻿var serverDateTime;
+var serverStatus;
+var serverPopulation;
 
 function serverTime_init() {
     var apiBaseURL = 'https://api.eveonline.com';
@@ -6,6 +8,23 @@ function serverTime_init() {
 
     $.post(apiBaseURL + statusURL, '', function (data, status, xhr) {
         if (status == 'success') {
+            // Set server status
+            serverStatus = $('serverOpen', data).text();
+            if (serverStatus === 'True') {
+                $('#serverTimeHoverTemplate .TQServerStatus').html('Online').css({ color: 'green' });
+            }//end if
+            else {
+                $('#serverTimeHoverTemplate .TQServerStatus').html('Offline').css({ color: 'red' });
+            }
+
+            // Set server population
+            serverPopulation = $('onlinePlayers', data).text();
+            $('#serverTimeHoverTemplate .TQPlayerCount').html(serverPopulation);
+
+            // Activate HoverBox for the server time element
+            $('#serverTime').attr({ HBTitle: 'Server Status', HBBodyElem: '#serverTimeHoverTemplate' });
+
+            // Set server time
             var rawTimeString = $('currentTime', data).text();
             if (rawTimeString != null) {
                 // Replace the space between the date and time with a capital T
