@@ -29,8 +29,12 @@
             <div id="chars">
                 <div class="charItem" id="startNew"><div class="charNew">+</div>Add New Character API</div>
             </div>
-            <div id="serverTime">00:00</div>
-        </div>;
+            <div id="serverTime" class="HBHasHoverBox" >00:00</div>
+            <div id="serverTimeHoverTemplate" class="HBTemplate">
+                <p><strong>Tranquility:</strong> <span class="TQServerStatus"></span></p>
+                <p><span class="TQPlayerCount"></span> players</p>
+            </div>
+        </div>
 
         <!-- User Info Panel -->
         <div id="userInfo" class="UI_Window">
