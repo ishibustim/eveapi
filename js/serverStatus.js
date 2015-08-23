@@ -180,7 +180,7 @@ serverStatus.getFormattedUpdateTime = function() {
     retVal += minutes + 'm';
   }//end if
   else {
-    retVal = 'Updating...';
+    retVal = '<i class="fa fa-spinner fa-pulse"></i> Updating';
   }//end else
 
   return retVal;
