@@ -24,6 +24,10 @@
     font-size: 20px;
 }
 
+#HoverBox .HBHeader i {
+    margin-right: 10px;
+}
+
 #HoverBox .HBBody {
     background-color: rgba(0, 0, 0, 0.85);
     min-height: 100px;

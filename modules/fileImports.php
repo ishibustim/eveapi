@@ -42,6 +42,6 @@ echo "\n";
 
         // Run the server time process last so (hopefully) nothing will delay the results
         // (which would cause an incorrect time)
-        serverStatus_init();
+        serverStatus.init();
     };
 </script>

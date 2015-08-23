@@ -31,8 +31,12 @@
             </div>
             <div id="serverTime" class="HBHasHoverBox" >00:00</div>
             <div id="serverTimeHoverTemplate" class="HBTemplate">
-                <p><strong>Tranquility:</strong> <span class="TQServerStatus"></span></p>
-                <p><span class="TQPlayerCount"></span> players</p>
+                <strong>Tranquility:</strong> <span class="TQPlayerCount"></span> players
+                <hr />
+                <span class="TQServerStatus"></span>
+                <br />
+                <br />
+                <span class="TimeUntilUpdate"></span>
             </div>
         </div>
 

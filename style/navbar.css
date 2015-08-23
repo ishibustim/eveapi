@@ -92,3 +92,12 @@
     cursor: default;
     background-color: #555555;
 }
+
+#serverTimeHoverTemplate {
+    font-weight: 100;
+}
+
+#serverTimeHoverTemplate .TimeUntilUpdate {
+    font-size: 12px;
+    float: right;
+}
