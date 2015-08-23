@@ -74,13 +74,9 @@ serverStatus.parseAPI = function(data) {
   }//end if
 
   // Set next update time
-  var rawUpdateTimeString = $('cachedUntil', data).text();
-  if (rawUpdateTimeString != null) {
-    // Replace the space between teh date and time with a capital T
-    // While Chrome is not picky about this, FF and IE appear to be
-    rawUpdateTimeString = rawUpdateTimeString.replace(' ', 'T');
-    serverStatus.nextUpdate = new Date(rawUpdateTimeString);
-  }//emd if
+  serverStatus.nextUpdate = new Date(serverStatus.serverDateTime.getTime());
+  serverStatus.nextUpdate.setMinutes(serverStatus.nextUpdate.getMinutes() + 20);
+  $('#serverTime').html(serverStatus.getFormattedTime());
 };//end parseAPI
 
 // this is called every minute to update the stored server time
