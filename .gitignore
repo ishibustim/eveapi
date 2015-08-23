@@ -4,6 +4,14 @@
 sql_login.php
 
 #################
+## Visual Studio
+#################
+*.proj
+*.phpproj
+*.sln
+.vs/*
+
+#################
 ## Eclipse
 #################
 
