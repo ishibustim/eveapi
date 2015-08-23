@@ -1,4 +1,9 @@
-﻿var serverStatus = serverStatus || {};// end serverStatus namespace
+﻿// serverStatus.js
+// 
+// Object to pull the serverStatus API and display
+// the data on the navbar
+
+var serverStatus = serverStatus || {};// end serverStatus namespace
 
 // these keep track of the values obtained from the serverStatus api
 serverStatus.serverDateTime = undefined;
