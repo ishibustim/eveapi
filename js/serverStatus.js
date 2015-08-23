@@ -74,8 +74,23 @@ serverStatus.parseAPI = function(data) {
   }//end if
 
   // Set next update time
-  serverStatus.nextUpdate = new Date(serverStatus.serverDateTime.getTime());
-  serverStatus.nextUpdate.setMinutes(serverStatus.nextUpdate.getMinutes() + 20);
+  // Go with the longer of 20 minutes or 'cachedUntil'
+  var rawUpdateTimeString = $('cachedUntil', data).text();
+  var cachedUntil;
+  if (rawUpdateTimeString != null) {
+    rawUpdateTimeString = rawUpdateTimeString.replace(' ', 'T');
+    cachedUntil = new Date(rawUpdateTimeString);
+  }//end if
+  var twentyMinutes = new Date(serverStatus.serverDateTime.getTime());
+  twentyMinutes.setMinutes(twentyMinutes.getMinutes() + 20);
+
+  if (twentyMinutes.getTime() > cachedUntil.getTime()) {
+    serverStatus.nextUpdate = new Date(twentyMinutes.getTime());
+  }//end if
+  else {
+    serverStatus.nextUpdate = new Date(cachedUntil.getTime());
+  }//end else
+
   $('#serverTime').html(serverStatus.getFormattedTime());
 };//end parseAPI
 
