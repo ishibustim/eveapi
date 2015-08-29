@@ -1,9 +1,12 @@
 ﻿// serverStatus.js
-// 
+//
 // Object to pull the serverStatus API and display
 // the data on the navbar
 
 var serverStatus = serverStatus || {};// end serverStatus namespace
+
+// the url suffix for serverStatus
+serverStatus.statusURL = '/server/ServerStatus.xml.aspx';
 
 // these keep track of the values obtained from the serverStatus api
 serverStatus.serverDateTime = undefined;
@@ -29,10 +32,7 @@ serverStatus.update = function() {
   if(serverStatus.clockLoop !== undefined)
     clearTimeout(serverStatus.clockLoop);
 
-  var apiBaseURL = 'https://api.eveonline.com';
-  var statusURL = '/server/ServerStatus.xml.aspx';
-
-  $.post(apiBaseURL + statusURL, '', function (data, status, xhr) {
+  $.post(global.apiBaseURL + serverStatus.statusURL, '', function (data, status, xhr) {
     if (status == 'success') {
       serverStatus.parseAPI(data);
 
@@ -68,7 +68,7 @@ serverStatus.parseAPI = function(data) {
 
   // Set server population
   serverStatus.serverPopulation = $('onlinePlayers', data).text();
-  
+
   // Set server time
   var rawTimeString = $('currentTime', data).text();
   if (rawTimeString != null) {
@@ -114,7 +114,7 @@ serverStatus.updateServerTime = function() {
 // update the UI
 serverStatus.updateUI = function(updateHoverBox) {
   $('#serverTime').html(serverStatus.getFormattedTime());
-  
+
   // set default value of updateHoverBox to false
   updateHoverBox = updateHoverBox || false;
 

@@ -1,11 +1,17 @@
-var timeDiv;
-function eveApi_load()
+// eveApi.js
+//
+// Handles interacting with the API UI
+// (not to be confused with the API itself)
+
+var eveApiUI = eveApiUI || {};
+
+eveApiUI.init = function()
 {
   // Set up default event listeners on the page
-  eveApi_initEventListeners();
+  eveApiUI.initEventListeners();
 };//end window.onload
 
-function eveApi_initEventListeners()
+eveApiUI.initEventListeners = function()
 {
   // Event listener for entering new API keys
   // This is called by clicking the Add Api option in the character select menu
@@ -21,7 +27,7 @@ function eveApi_initEventListeners()
     {
       document.getElementById('chars').classList.toggle('hide', false);
     }, 100);//end setTimeout
-    
+
   });//end addEventListener
 
   // Event listener for the cancel button on the New API window

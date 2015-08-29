@@ -4,6 +4,7 @@ body {
     margin: 0;
     background-image: url('images/m-07.jpg');
     background-attachment: fixed;
+    background-position: center;
     background-color: black;
 }
 
