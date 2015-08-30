@@ -128,6 +128,12 @@ serverStatus.updateNextUpdateUI = function() {
   $('#serverTimeHoverTemplate .TimeUntilUpdate').html(serverStatus.getFormattedUpdateTime());
 }//end updateNextUpdateUI
 
+// returns the server time date object
+// this will be used in other areas of the api for checking cache refreshes
+serverStatus.getTime = function() {
+  return serverStatus.serverDateTime;
+};//end getTime
+
 // returns the formatted server time
 serverStatus.getFormattedTime = function() {
   if(serverStatus.serverDateTime !== undefined) {
