@@ -24,7 +24,7 @@
     height: auto;
     cursor: pointer;
     border-radius: 0px 5px 5px 0px;
-    overflow: auto;
+    overflow: hidden;
 }
 
 #chars.hide:hover {
