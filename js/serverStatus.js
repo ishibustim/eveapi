@@ -72,10 +72,7 @@ serverStatus.parseAPI = function(data) {
   // Set server time
   var rawTimeString = $('currentTime', data).text();
   if (rawTimeString != null) {
-    // Replace the space between the date and time with a capital T
-    // While Chrome is not picky about this, FF and IE appear to be
-    rawTimeString = rawTimeString.replace(' ', 'T');
-    serverStatus.serverDateTime = new Date(rawTimeString);
+    serverStatus.serverDateTime = serverStatus.getUTCDate(rawTimeString);
   }//end if
 
   // Set next update time
@@ -83,8 +80,7 @@ serverStatus.parseAPI = function(data) {
   var rawUpdateTimeString = $('cachedUntil', data).text();
   var cachedUntil;
   if (rawUpdateTimeString != null) {
-    rawUpdateTimeString = rawUpdateTimeString.replace(' ', 'T');
-    cachedUntil = new Date(rawUpdateTimeString);
+    cachedUntil = serverStatus.getUTCDate(rawUpdateTimeString);
   }//end if
   var twentyMinutes = new Date(serverStatus.serverDateTime.getTime());
   twentyMinutes.setMinutes(twentyMinutes.getMinutes() + 20);
@@ -98,6 +94,18 @@ serverStatus.parseAPI = function(data) {
 
   $('#serverTime').html(serverStatus.getFormattedTime());
 };//end parseAPI
+
+serverStatus.getUTCDate = function(str) {
+  // raw string is in the format 'YYYY-MM-DD HH:MM:SS'
+  var splitDateTime = str.split(' ');
+  var rawDate = splitDateTime[0];
+  var rawTime = splitDateTime[1];
+
+  var splitDate = rawDate.split('-');
+  var splitTime = rawTime.split(':');
+
+  return new Date(Date.UTC(splitDate[0], splitDate[1], splitDate[2], splitTime[0], splitTime[1], splitTime[2]));
+};//end getUTCDate
 
 // this is called every minute to update the stored server time
 // this will also re-draw the server time UI
