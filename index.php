@@ -3,7 +3,7 @@
   <?php
   if($_SERVER["HTTPS"] != "on") {
     // Redirect to HTTPS if accessed via HTTP
-    header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+    header("Location: https://" . explode(":", $_SERVER["HTTP_HOST"])[0] . $_SERVER["REQUEST_URI"]);
     exit();
   }//end if
 
